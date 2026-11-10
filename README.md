@@ -216,3 +216,11 @@ Le lot est ajouté automatiquement à la première ouverture de la bibliothèque
 Chaque fiche comprend une présentation partageable, une relation de travail déjà établie avec le nouveau fixer et une accroche privée au MJ. Les notes MJ ne sont pas copiées lors de l’ajout aux relations.
 
 Validation Chromium : cinq ajouts sans modifier Claire, absence de doublon à la réouverture et avec un Nix existant, ajout de Nix à J1 sans ses accroches MJ, conservation d’une modification de Ledger, suppression persistante de Switch et affichage mobile sans débordement. Compilation réussie.
+
+## Fixeurs dans la bibliothèque PNJ
+
+`fixer-npcs.js` ajoute les huit fixeurs de la carte : Rogue, Regina Jones, Wakako Okada, Padre, El Capitán, Dino Dinovic, Dakota Smith et Mr. Hands. Les présentations reprennent leurs rôles et secteurs ; les accroches MJ sont des propositions originales de campagne. Rogue est explicitement décrite comme ayant laissé sa place centrale à l’Afterlife au PJ, sans imposer son décès ou son absence.
+
+Le lot est installé une seule fois à l’ouverture de MJ → PNJ (`fia-npc-pack-fixers-v1`). Le mécanisme commun `installNPCPack` conserve les PNJ existants et utilise aussi des alias pour éviter de doubler une fiche déjà nommée Padre ou El Capitan. Claire et les cinq contacts précédents sont conservés. Les modifications et suppressions sont respectées. Aucun joueur n’est affecté automatiquement : les boutons Ajouter / Actualiser J1/J2 sont disponibles.
+
+Validation Chromium : présence des huit fixeurs, préservation de Claire et d’une Wakako personnalisée, absence de doublon en bibliothèque et en relation, exclusion des accroches MJ, persistance des modifications/suppressions et affichage mobile sans débordement. Compilation réussie, aucune erreur JavaScript.

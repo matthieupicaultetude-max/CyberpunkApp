@@ -9,5 +9,6 @@ export const afterlifeNPCs=[
 ];
 const marker='fia-npc-pack-afterlife-v1';
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').replace(/[^a-z0-9]+/g,' ').trim();
-const names=n=>[n.nickname,[n.firstName,n.lastName].filter(Boolean).join(' '),n.name].map(norm).filter(Boolean);
-export function installAfterlifeNPCs(existing){if(localStorage.getItem(marker))return existing;const result=[...existing];for(const npc of afterlifeNPCs){const aliases=names(npc);if(!result.some(n=>n.id===npc.id||names(n).some(name=>aliases.includes(name))))result.push(structuredClone(npc))}localStorage.setItem('fia-npcs-v1',JSON.stringify(result));localStorage.setItem(marker,'installed');return result}
+const names=n=>[n.nickname,[n.firstName,n.lastName].filter(Boolean).join(' '),n.name,...(Array.isArray(n.aliases)?n.aliases:[])].map(norm).filter(Boolean);
+export function installNPCPack(existing,npcs,packMarker){if(localStorage.getItem(packMarker))return existing;const result=[...existing];for(const npc of npcs){const aliases=names(npc);if(!result.some(n=>n.id===npc.id||names(n).some(name=>aliases.includes(name))))result.push(structuredClone(npc))}localStorage.setItem('fia-npcs-v1',JSON.stringify(result));localStorage.setItem(packMarker,'installed');return result}
+export function installAfterlifeNPCs(existing){return installNPCPack(existing,afterlifeNPCs,marker)}
