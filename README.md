@@ -158,3 +158,13 @@ L’influence d’un fixer représente ses contacts et sa zone habituelle de con
 Les descriptions et coordonnées restent provisoires, avec des liens wiki de référence prévus, non vérifiés depuis cet environnement. La sélection n’est pas un inventaire exhaustif des lieux de 2077.
 
 Validation Chromium : neuf branches (bars + huit fixeurs), repères et réseaux de chaque branche, fenêtres et retour du focus, options de visibilité, recherche/catégorie, retour aux lieux généraux, régression corporations/gangs, MJ/joueur et largeurs 390/768/1024 sans débordement. Compilation réussie, aucune erreur JavaScript.
+
+## Photos des lieux corporatistes — récupération à valider
+
+`place-images.js` ajoute un emplacement photo aux fenêtres des sites corporatistes. À l’ouverture seulement, le navigateur interroge l’API PageImages du Cyberpunk Wiki pour l’article du lieu, puis affiche son image principale avec un lien de référence. Aucune image générée ou photo de ville réelle n’est substituée. Les pages générales de corporation ne sont pas utilisées pour éviter d’afficher leur logo à la place d’un bâtiment ; les titres des pages de bâtiments sont des candidats qui restent à vérifier.
+
+Les images doivent provenir d’un hôte HTTPS du domaine `wikia.nocookie.net`. Les échecs d’API, de chargement ou l’absence d’image affichent un message explicite, sans image cassée. La récupération est annulée à la fermeture de la fenêtre ; les délais API/image sont bornés. Les sites trop peu renseignés ne reçoivent pas de fausse référence photo.
+
+**État réel : aucune photo Internet n’a été récupérée ni vérifiée.** Les requêtes à `cyberpunk.fandom.com/wiki/Arasaka_Tower` et à Wikimedia sont refusées par le proxy (CONNECT 403). La lecture du brouillon de configuration réseau échoue également. Il reste à autoriser `cyberpunk.fandom.com` et `static.wikia.nocookie.net`, vérifier les pages et les photos, puis idéalement conserver des références vérifiées ou des fichiers locaux avec leurs crédits. Le fonctionnement en direct dans le navigateur public dépend aussi de l’API, de ses règles CORS et de l’accès au CDN ; il n’est pas garanti par les tests simulés.
+
+Validation effectuée : compilation et tests Chromium avec API/CDN simulés, chargement d’une image de test, attribution, fenêtre mobile, réponse réseau en échec, site sans référence photo et fermeture sans erreur JavaScript. Ces tests vérifient l’interface, pas l’existence des photos réelles.
