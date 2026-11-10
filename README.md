@@ -64,3 +64,17 @@ Le wiki `cyberpunk.fandom.com` et son serveur d’images `static.wikia.nocookie.
 ### Vérifications
 
 Compilation et parcours Chromium : migration des anciens réglages, ajout/modification/suppression des blocs, visibilité indépendante J1/J2, sauvegarde après rechargement, recherche excluant les blocs masqués, export excluant leur contenu, import du dossier joueur, édition de la présentation et affichage mobile MJ/joueur sans débordement, aucune erreur JavaScript.
+
+## Carte tactique de Night City
+
+Onglet « Carte » pour J1/J2 et bouton « Carte / Night City » pour le MJ. Le plan SVG original présente les six districts urbains, les Badlands, un repère Dogtown (Phantom Liberty) et 17 lieux. Données dans `night-city-data.js`, interactions dans `night-city.js`.
+
+Fonctions : déplacement par glisser, zoom borné de 100 à 500 %, recentrage, sélection des districts et lieux, fiches descriptives, recherche, filtres district/type. Contrôles clavier : Tab puis Entrée/Espace pour choisir les éléments ; sur le plan, flèches pour déplacer, +/− pour zoomer et 0 pour recentrer. Sur écran tactile : glisser et pincement. Sur ordinateur : boutons de zoom ou Ctrl/molette. Aucun service de tuiles externe ni dépendance cartographique.
+
+### Précision et références
+
+Ce plan est schématique et non à l’échelle. Routes, limites et positions sont dessinées approximativement pour le jeu de rôle. Il ne reproduit pas la carte du jeu et ne fournit pas d’itinéraire. Les descriptions restent provisoires.
+
+Les tentatives de consultation de `https://night-city-geoguessr.site/` et `https://cyberpunk.fandom.com/wiki/Night_City` ont échoué (proxy CONNECT 403). Aucune image ni donnée n’a été extraite de ces sites. Les liens sont proposés comme références à consulter ; il faut autoriser `night-city-geoguessr.site` et `cyberpunk.fandom.com` dans les paramètres réseau pour vérifier la géographie et les informations. Les sites peuvent nécessiter d’autres domaines de ressources après ce premier accès.
+
+Validation : compilation, accès joueurs/MJ, sept secteurs et 17 lieux, sélection et descriptions, zoom/recentrage/déplacement, clavier, recherche sans résultat, filtres croisés et affichage à 390/768/1024 pixels sans débordement. Aucune erreur JavaScript pendant le parcours. Le pincement est implémenté mais reste à vérifier sur téléphone réel.
