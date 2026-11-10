@@ -206,3 +206,13 @@ Les relations sont des copies : modifier un PNJ ne met pas automatiquement toute
 Les actions concernent uniquement les profils de la même origine et du même navigateur. Les onglets joueurs ouverts se mettent à jour via les événements de stockage lorsqu’aucun formulaire n’est ouvert. Un ajout MJ survenu pendant la saisie d’une relation manuelle est conservé lors de l’enregistrement du joueur. Aucune synchronisation entre appareils et aucune authentification : les notes MJ sont exclues de la copie, mais le stockage local n’est pas une protection d’accès.
 
 `npc-ui.js` gère la bibliothèque et ses actions. Validation Chromium sur deux onglets : CRUD PNJ, portrait et rechargement, ajout à chaque joueur, prévention des doublons, exclusion des notes MJ, conservation des annotations, modification de relation conservant le lien au PNJ, actualisation inter-onglets, ajout simultané d’une relation manuelle et d’un PNJ, affichage mobile, suppression conservant les relations et aucune erreur JavaScript. Compilation réussie.
+
+## Contacts du nouveau fixer de l’Afterlife
+
+`afterlife-npcs.js` fournit cinq fiches pour le joueur qui a repris le rôle de Rogue : Emmerick (sécurité), Nix (netrunning), Crispin Weyland (équipes mercenaires), Lena « Ledger » Voss (contrats/intendance, originale) et Imani « Switch » Diallo (transport/extraction, originale). Les trois premiers sont des personnages de l’univers adaptés à la campagne ; toutes les relations antérieures décrites avec le joueur et toutes les accroches MJ sont des créations de campagne. Claire Russell n’est pas incluse : l’utilisateur l’a déjà créée.
+
+Le lot est ajouté automatiquement à la première ouverture de la bibliothèque MJ après mise à jour. Les PNJ existants sont conservés ; les noms et identifiants sont comparés pour éviter notamment de doubler un Nix déjà ajouté manuellement. Le marqueur `fia-npc-pack-afterlife-v1` empêche de réinstaller le lot à chaque ouverture : les modifications et suppressions du MJ sont respectées. Aucun joueur n’est choisi automatiquement, son profil n’ayant pas été précisé ; les boutons Ajouter à J1/J2 restent disponibles.
+
+Chaque fiche comprend une présentation partageable, une relation de travail déjà établie avec le nouveau fixer et une accroche privée au MJ. Les notes MJ ne sont pas copiées lors de l’ajout aux relations.
+
+Validation Chromium : cinq ajouts sans modifier Claire, absence de doublon à la réouverture et avec un Nix existant, ajout de Nix à J1 sans ses accroches MJ, conservation d’une modification de Ledger, suppression persistante de Switch et affichage mobile sans débordement. Compilation réussie.
