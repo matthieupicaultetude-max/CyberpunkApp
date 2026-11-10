@@ -41,7 +41,7 @@ Validation profils : ouverture MJ/J1/J2, sauvegarde et rechargement de session, 
 
 ## Glossaire des corporations
 
-21 fiches initiales dans `corporations.js` et interface dans `glossary.js`. Trois niveaux cumulatifs : notoriété publique, connaissance approfondie, analyse stratégique. Le niveau initial est 1 pour chaque corporation et joueur. MJ → « Glossaire / Connaissances » permet de modifier indépendamment J1 et J2. Les joueurs disposent de l’onglet « Glossaire », d’une recherche et d’un filtre par secteur.
+10 fiches majeures dans `corporations.js` et interface dans `glossary.js`. Trois niveaux cumulatifs : notoriété publique, connaissance approfondie, renseignements sensibles. Le niveau initial est 1 pour chaque corporation et joueur. MJ → « Glossaire / Connaissances » permet de modifier indépendamment J1 et J2. Les joueurs disposent de l’onglet « Glossaire », d’une recherche et d’un filtre par secteur.
 
 Les réglages sont enregistrés dans `fia-corporation-knowledge-v1`. Les onglets du même navigateur sont actualisés lors des changements. Pour un autre appareil, le MJ exporte le JSON du joueur ; celui-ci l’importe dans son glossaire. L’import refuse les mauvais profils, versions et niveaux et ne modifie pas les fiches de personnage. Ce transfert est manuel et les fichiers restent modifiables : aucun contrôle d’accès réel n’est fourni par cet hébergement statique.
 
@@ -51,4 +51,13 @@ Les pages `https://cyberpunk.fandom.com/wiki/Corporations` et `https://cyberpunk
 
 ### Validation glossaire
 
-Compilation et parcours Chromium : 21 corporations, recherche et recherche vide, niveaux 1/2/3 cumulatifs, attributions J1/J2 indépendantes, persistance après rechargement, export/import, rejet d’un fichier pour le mauvais joueur, affichage MJ/joueur à 390/768/1024 pixels sans débordement et aucune erreur JavaScript.
+Compilation et parcours Chromium : 10 corporations, recherche et recherche vide, niveaux 1/2/3 cumulatifs, attributions J1/J2 indépendantes, persistance après rechargement, export/import, rejet d’un fichier pour le mauvais joueur, affichage MJ/joueur à 390/768/1024 pixels sans débordement et aucune erreur JavaScript.
+
+
+### Fiches détaillées et visuels
+
+La sélection conserve Arasaka, Militech, Kang Tao, Biotechnica, Petrochem, SovOil, Trauma Team, Night Corp, Zetatech et Kiroshi. Chaque corporation possède six rubriques réparties sur trois niveaux : produits et services, exemples concrets, histoire, figures liées, puis renseignements sensibles et mise en perspective. Les personnes liées sont distinguées des employés ou dirigeants. Les spoilers sont signalés dans les rubriques du niveau 3.
+
+Les dix SVG de `public/corporations/` sont des signatures graphiques provisoires créées pour l’interface, pas des logos officiels. Le wiki et `static.wikia.nocookie.net` renvoient toujours un refus du proxy (CONNECT 403). Autoriser ces domaines dans les paramètres réseau est nécessaire pour vérifier les textes et récupérer les vrais logos avec leurs références. Les marquages dans l’interface indiquent cette limite.
+
+Les identifiants et niveaux enregistrés des dix corporations sont conservés. L’import accepte aussi les anciens exports à 21 corporations, en ne reprenant que les dix corporations retenues. Vérifications supplémentaires : chargement des dix SVG, présence de 60 rubriques, lisibilité des sections et import d’un ancien export à 21 entrées.
