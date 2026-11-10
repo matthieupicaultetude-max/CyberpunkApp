@@ -100,3 +100,13 @@ Les données sont dans `corporation-map-data.js`. Le siège mondial est décrit 
 Les zones d’influence sont des propositions pour la campagne, pas des frontières canoniques, des possessions ou un contrôle exclusif. Elles sont dessinées sur les sous-quartiers plutôt que sur tous les districts. Trauma Team n’est pas représentée comme possédant la ville sous prétexte de couverture médicale.
 
 Validation : dix choix de corporation, sélection Arasaka (QG local et trois sites), activation indépendante des couches, fiches, filtres croisés, distinction des sièges hors carte, états sans site renseigné, chargement des visuels, retour aux lieux généraux, profils MJ/joueur et affichage mobile ; régression de l’import et de la conservation du fond de carte.
+
+## Arborescence des corporations et lieux affiliés
+
+La liste déroulante simple est remplacée par une arborescence native accessible : « Corporations » → ouvrir Arasaka (ou une autre corporation) → choisir un lieu affilié. L’ouverture d’une branche active sa couche et ferme visuellement l’ancienne. Un clic sur le lieu réactive sa couche si nécessaire, centre la carte et ouvre sa fiche. Les filtres précédents sont remis à zéro lors d’un changement de corporation ou d’une sélection dans l’arbre.
+
+Arasaka présente six entrées : tour, Waterfront, parc industriel, Konpeki Plaza, domaine Arasaka et Ebunike (lien avec Adam Smasher, sans affirmation de propriété). Militech comprend également une entrée Cynosure liée à Phantom Liberty, explicitement signalée comme spoiler et approximative. Les corporations sans emplacement renseigné affichent un message dédié.
+
+Les nouvelles tentatives d’accès au wiki et à Geoguessr ont encore été refusées par le proxy (CONNECT 403). Les ajouts proviennent de connaissances générales de l’univers, avec des pages de référence prévues et des positions à vérifier ; ils ne sont pas présentés comme le résultat d’une consultation réussie d’Internet.
+
+Validation : dix corporations dans l’arbre, six lieux Arasaka, sélection/centrage/fiches, restauration d’une couche masquée lors du choix d’un lieu, changement de branche, Cynosure, état sans site, retour aux lieux généraux, navigation clavier, profils MJ/joueur et largeurs 390/768/1024 pixels sans débordement. Aucune erreur JavaScript.
