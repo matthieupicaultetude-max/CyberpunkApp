@@ -194,3 +194,15 @@ Les outils précédents (fiche complète, glossaire, opérations et communicatio
 Les portraits et relations restent locaux au navigateur, sans synchronisation entre appareils. Les erreurs de stockage sont signalées et la dernière identité conservée est restaurée en mémoire si l’écriture échoue.
 
 Validation Chromium : trois onglets, récupération d’une sauvegarde ancienne, édition identité et portrait avec rechargement, conservation des anciennes valeurs, carnet de relations complet et aperçu à l’accueil, isolation J1/J2, accès carte/glossaire/MJ, affichage mobile sans débordement et aucune erreur JavaScript. Compilation réussie.
+
+## MJ — bibliothèque PNJ et ajout aux relations
+
+Le nouvel onglet « PNJ / Personnages » permet de créer, modifier et supprimer des PNJ : prénom, nom, surnom, classe/rôle, affiliation, portrait local, présentation partagée et notes MJ. La bibliothèque commence vide et est stockée dans `fia-npcs-v1`. Les portraits reprennent la validation PNG/JPG/WebP et la limite de 1 Mo de l’interface joueur.
+
+Chaque fiche propose « Ajouter à J1 » et « Ajouter à J2 ». L’action copie le PNJ dans le carnet du joueur avec un identifiant source stable. Une seconde action affiche « Actualiser » et met à jour la présentation sans doublon ; le type de relation et les notes personnalisées du joueur sont conservés. Les notes MJ ne sont jamais copiées aux profils joueurs. Les portraits apparaissent également dans les cartes de relations. La modification d’une relation côté joueur conserve son lien au PNJ.
+
+Les relations sont des copies : modifier un PNJ ne met pas automatiquement toutes les fiches à jour, il faut utiliser le bouton Actualiser du joueur concerné. Supprimer le PNJ de la bibliothèque ne supprime pas les relations déjà créées. Les erreurs de stockage sont signalées. Un fichier PNJ illisible n’est pas écrasé.
+
+Les actions concernent uniquement les profils de la même origine et du même navigateur. Les onglets joueurs ouverts se mettent à jour via les événements de stockage lorsqu’aucun formulaire n’est ouvert. Un ajout MJ survenu pendant la saisie d’une relation manuelle est conservé lors de l’enregistrement du joueur. Aucune synchronisation entre appareils et aucune authentification : les notes MJ sont exclues de la copie, mais le stockage local n’est pas une protection d’accès.
+
+`npc-ui.js` gère la bibliothèque et ses actions. Validation Chromium sur deux onglets : CRUD PNJ, portrait et rechargement, ajout à chaque joueur, prévention des doublons, exclusion des notes MJ, conservation des annotations, modification de relation conservant le lien au PNJ, actualisation inter-onglets, ajout simultané d’une relation manuelle et d’un PNJ, affichage mobile, suppression conservant les relations et aucune erreur JavaScript. Compilation réussie.
