@@ -14,9 +14,27 @@ const articles={
 'corp-biotechnica-flats':'Biotechnica_Flats',
 'corp-petrochem-tower':'Petrochem_Building',
 'corp-zetatech-building':'Zetatech_Building',
-'corp-kiroshi-building':'Kiroshi_Building'
+'corp-kiroshi-building':'Kiroshi_Building',
+'gang-maelstrom-allfoods':'All_Foods_Factory',
+'gang-maelstrom-totentanz':'Totentanz',
+'gang-maelstrom-docks':'Ebunike',
+'gang-tyger-clouds':'Clouds',
+'gang-tyger-jigjig':'Jig-Jig_Street',
+'gang-tyger-hooh':'Ho-Oh',
+'gang-valentinos-coyote':'El_Coyote_Cojo',
+'gang-valentinos-alley':'Valentino_Alley',
+'gang-voodoo-chapel':'Chapel',
+'gang-voodoo-battys':"Batty's_Hotel",
+'gang-animals-gim':'Grand_Imperial_Mall',
+'gang-mox-lizzies':"Lizzie's_Bar",
+'gang-barghest-sapphire':'Black_Sapphire',
+'gang-barghest-stadium':'EBM_Petrochem_Stadium',
+'gang-aldecaldos-camp':'Aldecaldo_Camp',
+'gang-aldecaldos-sunset':'Sunset_Motel',
+'gang-wraiths-camp':'Wraith_Camp',
+'gang-wraiths-rocky':'Rocky_Ridge'
 };
-export function placeImageView(place){if(!place.id.startsWith('corp-'))return '';return '<figure class="place-photo" data-place-photo aria-label="Photographie du lieu"><div class="place-photo-status" role="status">Recherche d’une photo sur le wiki…</div></figure>'}
+export function placeImageView(place){if(!place.id.startsWith('corp-')&&!place.id.startsWith('gang-'))return '';return '<figure class="place-photo" data-place-photo aria-label="Photographie du lieu"><div class="place-photo-status" role="status">Recherche d’une photo sur le wiki…</div></figure>'}
 export function bindPlaceImage(container,place){const figure=container.querySelector('[data-place-photo]');if(!figure)return ()=>{};const article=articles[place.id];let stopped=false,imageTimer=null;const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),8000);const showStatus=text=>{figure.classList.remove('photo-loaded');figure.replaceChildren();const status=document.createElement('div');status.className='place-photo-status';status.setAttribute('role','status');status.textContent=text;figure.append(status)};
 if(!article){clearTimeout(timer);showStatus('Photo non référencée pour ce lieu.');return ()=>{}}
 const params=new URLSearchParams({action:'query',prop:'pageimages',titles:article,piprop:'original',format:'json',origin:'*',redirects:'1'});

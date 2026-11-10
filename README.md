@@ -168,3 +168,9 @@ Les images doivent provenir d’un hôte HTTPS du domaine `wikia.nocookie.net`. 
 **État réel : aucune photo Internet n’a été récupérée ni vérifiée.** Les requêtes à `cyberpunk.fandom.com/wiki/Arasaka_Tower` et à Wikimedia sont refusées par le proxy (CONNECT 403). La lecture du brouillon de configuration réseau échoue également. Il reste à autoriser `cyberpunk.fandom.com` et `static.wikia.nocookie.net`, vérifier les pages et les photos, puis idéalement conserver des références vérifiées ou des fichiers locaux avec leurs crédits. Le fonctionnement en direct dans le navigateur public dépend aussi de l’API, de ses règles CORS et de l’accès au CDN ; il n’est pas garanti par les tests simulés.
 
 Validation effectuée : compilation et tests Chromium avec API/CDN simulés, chargement d’une image de test, attribution, fenêtre mobile, réponse réseau en échec, site sans référence photo et fermeture sans erreur JavaScript. Ces tests vérifient l’interface, pas l’existence des photos réelles.
+
+### Photos des lieux de gangs
+
+Le même composant photo équipe désormais les pop-ups des 21 lieux de gangs/clans. Dix-huit entrées ont une page de lieu candidate pour la récupération PageImages (All Foods, Totentanz, Clouds, Lizzie’s Bar, Black Sapphire, etc.). Les trois entrées uniquement rattachées à un personnage ou à un événement ne tentent pas d’afficher le portrait du personnage ou une image de quête comme s’il s’agissait du bâtiment : elles indiquent « Photo non référencée ».
+
+Les mêmes limites réseau demeurent : aucune image réelle n’a été récupérée ni vérifiée. Les pages candidates, notamment les camps mobiles, restent à contrôler. Tests Chromium avec API/CDN simulés : photos et crédits Maelstrom/Mox/Barghest, repli pour lieu sans page adaptée, fenêtre mobile et fermeture. Compilation réussie.
