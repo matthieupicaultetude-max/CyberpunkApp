@@ -110,3 +110,11 @@ Arasaka présente six entrées : tour, Waterfront, parc industriel, Konpeki Plaz
 Les nouvelles tentatives d’accès au wiki et à Geoguessr ont encore été refusées par le proxy (CONNECT 403). Les ajouts proviennent de connaissances générales de l’univers, avec des pages de référence prévues et des positions à vérifier ; ils ne sont pas présentés comme le résultat d’une consultation réussie d’Internet.
 
 Validation : dix corporations dans l’arbre, six lieux Arasaka, sélection/centrage/fiches, restauration d’une couche masquée lors du choix d’un lieu, changement de branche, Cynosure, état sans site, retour aux lieux généraux, navigation clavier, profils MJ/joueur et largeurs 390/768/1024 pixels sans débordement. Aucune erreur JavaScript.
+
+## Carte — panneau droit et fenêtres de lieu
+
+La section Corporations est placée dans la colonne droite de la carte sur ordinateur ; elle passe sous la carte sur petit écran. Le panneau descriptif permanent des districts et la liste « Lieux répertoriés » sont supprimés. Les filtres de recherche, district et type sont conservés.
+
+Un clic sur un repère ouvre une fenêtre modale native avec le nom, le quartier, la corporation si applicable, la description et le lien de référence. Le choix d’un lieu dans l’arbre centre la carte et ouvre la même fenêtre. Fermeture par croix, Échap ou clic sur le fond extérieur ; le focus revient au repère ou à l’entrée de l’arbre. Les zones cliquables de deux repères proches ont été réduites pour éviter une interception au centre du cercle voisin.
+
+Validation Chromium : disposition du panneau à droite, suppression des anciens panneaux, clic réel sur un cercle, ouverture depuis l’arbre, fermeture par les trois méthodes, retour du focus, ouverture clavier, fenêtre et page sans débordement à 390 pixels, accès MJ/joueur, aucune erreur JavaScript. Compilation réussie.
