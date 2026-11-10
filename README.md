@@ -130,3 +130,9 @@ Validation : compilation et contrôle dans Chromium des six zones et de leur int
 Le périmètre agricole de Biotechnica est recalé sur les grands champs de serres en bas à gauche de la carte fournie. Un second polygone couvre leur arrière-pays dans les Badlands du sud. Corpo Plaza reste inclus. Le repère « Biotechnica Flats — serres » se trouve désormais au cœur du secteur agricole sud-ouest. Périmètres d’influence de campagne et position approximative.
 
 Validation : compilation, trois zones Biotechnica dans Chromium, position du repère, ouverture de sa fiche et interrupteur d’influence.
+
+### Influence — Westbrook, nord de Watson et Trauma Team
+
+Arasaka couvre désormais l’ensemble de Westbrook, ce qui englobe aussi le domaine Arasaka : l’ancien petit polygone du domaine est remplacé pour éviter une double opacité. SovOil conserve sa zone énergétique et ajoute la bande au nord de Watson. Trauma Team couvre les cinq districts urbains hors Pacifica : Watson, Westbrook, City Center, Heywood et Santo Domingo. Pacifica (donc Dogtown) et les Badlands sont exclus. Il s’agit d’une couverture médicale définie pour la campagne, pas d’une possession territoriale.
+
+Validation : compilation, contrôle des contours et exclusions, sélection des trois couches dans Chromium et activation/désactivation de la surbrillance.

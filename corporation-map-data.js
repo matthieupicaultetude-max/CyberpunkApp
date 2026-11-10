@@ -4,6 +4,8 @@ import {corporations} from './corporations.js';
 import {districts} from './night-city-data.js';
 const area=(name,points)=>({name,points});
 const zones={
+westbrook:area('Westbrook',districts.find(d=>d.id==='westbrook').shape),
+northWatson:area('Zone au nord de Watson','150,0 470,0 478,42 466,82 448,67 407,62 353,83 330,112 282,114 272,83 222,70 160,72 148,42'),
 cityCenter:area('Centre-ville (City Center)',districts.find(d=>d.id==='city-center').shape),
 southWatson:area('Sud de Watson','296,263 355,234 393,234 394,316 415,313 408,329 316,329'),
 arasakaEstate:area('Domaine Arasaka / North Oak','558,229 604,226 619,244 612,272 597,285 574,279 556,258'),
@@ -21,7 +23,7 @@ east:area('Corridors énergétiques des Badlands','640,415 820,385 907,454 884,5
 petro:area('Périphérie industrielle de Rancho Coronado','520,495 598,480 602,540 585,578 568,605 483,614 455,592 484,550')};
 const site=(id,name,district,x,y,kind,area,text,page)=>({id,name,district,x,y,kind,area,text,category:'Corporation',source:'https://cyberpunk.fandom.com/wiki/'+page,provisional:true});
 const entries={
-arasaka:{hq:'QG mondial : Tokyo, Japon. Direction locale : tour Arasaka, Corpo Plaza.',zones:[zones.cityCenter,zones.waterfront,zones.northside,zones.southWatson,zones.arasakaEstate,zones.santoDomingo],sites:[
+arasaka:{hq:'QG mondial : Tokyo, Japon. Direction locale : tour Arasaka, Corpo Plaza.',zones:[zones.cityCenter,zones.waterfront,zones.northside,zones.southWatson,zones.westbrook,zones.santoDomingo],sites:[
 site('corp-arasaka-hq','Tour Arasaka','city-center',373,378,'hq','Corpo Plaza','Direction locale d’Arasaka. Ce repère désigne le centre des activités à Night City, pas le siège mondial situé à Tokyo.','Arasaka_Tower'),
 site('corp-arasaka-waterfront','Arasaka Waterfront','watson',269,216,'site','Arasaka Waterfront','Secteur portuaire et industriel associé à Arasaka. Le repère représente un ensemble d’installations, pas une entrée précise.','Arasaka_Waterfront'),
 site('corp-arasaka-park','Parc industriel Arasaka','santo-domingo',466,487,'site','Arroyo','Complexe industriel d’Arasaka impliqué dans les événements de 2077. Emplacement dessiné approximativement.','Arasaka_Industrial_Park'),
@@ -40,8 +42,8 @@ site('corp-biotechnica-flats','Biotechnica Flats — serres','badlands',194,781,
 petrochem:{hq:'Le QG mondial n’est pas positionné sur ce plan. Les repères montrent des implantations locales à vérifier.',zones:[zones.plaza,zones.petro],sites:[
 site('corp-petrochem-tower','Tour Petrochem','city-center',351,370,'site','Corpo Plaza','Implantation corporatiste de Petrochem à Night City. Emplacement exact à vérifier sur le plan de référence.','Petrochem'),
 site('corp-petrochem-industry','Installations Petrochem','santo-domingo',546,568,'site','Rancho Coronado / périphérie','Repère industriel provisoire pour la campagne. Le rattachement de ce point précis à Petrochem n’a pas été vérifié.','Petrochem')]},
-sovoil:{hq:'QG mondial : Moscou. Aucun QG local ni site précis confirmé dans les données disponibles.',zones:[zones.east],sites:[]},
- 'trauma-team':{hq:'Aucun QG précis n’est positionné faute de vérification. Le service intervient dans la ville selon les contrats.',zones:[],sites:[]},
+sovoil:{hq:'QG mondial : Moscou. Aucun QG local ni site précis confirmé dans les données disponibles.',zones:[zones.east,zones.northWatson],sites:[]},
+ 'trauma-team':{hq:'Couverture médicale de campagne : tous les districts urbains de Night City sauf Pacifica. Les Badlands sont hors de ce périmètre. Aucun QG précis n’est positionné faute de vérification.',zones:districts.filter(d=>!['pacifica','badlands'].includes(d.id)).map(d=>area('Couverture médicale — '+d.name,d.shape)),sites:[]},
 'night-corp':{hq:'Corporation implantée à Night City. Aucun bâtiment de direction n’est positionné faute de vérification.',zones:[zones.downtown],sites:[]},
 zetatech:{hq:'Origine et siège historique : Cupertino. Le bâtiment de Heywood est une implantation locale à vérifier.',zones:[zones.vista],sites:[
 site('corp-zetatech-building','Bâtiment Zetatech','heywood',418,450,'site','Vista del Rey','Implantation de Zetatech dans Heywood. Le repère ne désigne pas le siège mondial.','Zetatech')]},
