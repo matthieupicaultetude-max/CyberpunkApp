@@ -43,3 +43,4 @@ aside{background:linear-gradient(155deg,#191919,#0b0b0b 45%);width:246px;padding
 /* Merc networks: bars and fixer contact ranges, distinct from gang control. */
 .map-sidebar .merc-section{margin-top:16px}.merc-influence{fill-opacity:.19;stroke-dasharray:8 5}.merc-section .corporation-tree{max-height:400px}.merc-section .corporation-tree-node>summary{line-height:1.7}.merc-section .corporation-tree-node>summary>small{float:none;display:block;margin:5px 0 0 16px;font-size:8px}
 @media(max-width:700px){.merc-section .corporation-tree{max-height:320px}}
+.merc-fixers-category>summary{cursor:pointer;padding:15px;font-size:12px;border-top:1px solid #363636;line-height:1.7}.merc-fixers-category>summary small{display:block;color:#999;font:8px/1.8 monospace;margin:5px 0 0 16px}.merc-fixers-list{margin:0 8px 10px 15px;border-left:1px solid #444;padding-left:8px}.merc-fixers-list .corporation-tree-node>summary{font-size:11px}
