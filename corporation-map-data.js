@@ -15,7 +15,8 @@ northside:area('Northside','282,114 330,112 353,83 407,62 448,67 466,82 484,128 
 charter:area('Charter Hill','488,350 515,373 555,379 557,380 588,412 596,453 544,458 503,439 473,416'),
 arroyo:area('Arroyo','473,416 503,439 544,458 515,500 488,550 455,564 422,583 403,551 389,547 389,533 421,493'),
 vista:area('Vista del Rey','400,436 420,419 440,408 473,416 452,448 421,493 402,488'),
-farms:area('Biotechnica Flats','275,880 422,660 555,668 520,826 480,905 350,915'),
+farms:area('Biotechnica Flats — serres du sud-ouest','19,752 77,706 176,638 210,651 253,674 276,684 311,691 336,666 375,649 384,623 426,617 390,711 335,791 274,887 239,903'),
+biotechnicaBadlands:area('Badlands du sud — arrière-pays agricole','426,617 480,619 536,616 570,616 560,750 517,949 438,970 330,970 258,950 274,887 335,791 390,711'),
 east:area('Corridors énergétiques des Badlands','640,415 820,385 907,454 884,579 688,598 641,560'),
 petro:area('Périphérie industrielle de Rancho Coronado','520,495 598,480 602,540 585,578 568,605 483,614 455,592 484,550')};
 const site=(id,name,district,x,y,kind,area,text,page)=>({id,name,district,x,y,kind,area,text,category:'Corporation',source:'https://cyberpunk.fandom.com/wiki/'+page,provisional:true});
@@ -33,9 +34,9 @@ site('corp-militech-base','Installation Militech des Badlands','badlands',710,46
 site('corp-militech-cynosure','Installation Cynosure','pacifica',411,625,'site','Sous-sol de la zone de Dogtown','Ancienne installation du projet Cynosure de Militech. Spoilers Phantom Liberty : ce complexe souterrain intervient dans une branche du récit. Son accès exact et sa projection sur le plan de surface restent à vérifier.','Cynosure_Facility')]},
 'kang-tao':{hq:'QG mondial : Chine. La tour de Night City est une implantation locale, pas le siège mondial.',zones:[zones.plaza],sites:[
 site('corp-kang-tao-tower','Tour Kang Tao','city-center',388,397,'site','Corpo Plaza','Tour associée à Kang Tao au sein du quartier corporatiste. Position précise à vérifier.','Kang_Tao')]},
-biotechnica:{hq:'QG mondial : Italie. À Night City : tour corporatiste et installations agricoles périphériques.',zones:[zones.plaza,zones.farms],sites:[
+biotechnica:{hq:'QG mondial : Italie. À Night City : tour corporatiste et installations agricoles périphériques.',zones:[zones.plaza,zones.farms,zones.biotechnicaBadlands],sites:[
 site('corp-biotechnica-tower','Tour Biotechnica','city-center',360,404,'site','Corpo Plaza','Implantation de Biotechnica dans le centre corporatiste. Repère local distinct de son siège international.','Biotechnica'),
-site('corp-biotechnica-flats','Biotechnica Flats','badlands',447,774,'site','Badlands du sud','Ensemble de serres et d’installations agricoles associé à Biotechnica. Le repère désigne la zone, pas un laboratoire individuel.','Biotechnica_Flats')]},
+site('corp-biotechnica-flats','Biotechnica Flats — serres','badlands',194,781,'site','Badlands du sud-ouest','Ensemble de serres et d’installations agricoles associé à Biotechnica, en bas à gauche de la carte de référence. Le repère désigne la zone agricole, pas un laboratoire individuel.','Biotechnica_Flats')]},
 petrochem:{hq:'Le QG mondial n’est pas positionné sur ce plan. Les repères montrent des implantations locales à vérifier.',zones:[zones.plaza,zones.petro],sites:[
 site('corp-petrochem-tower','Tour Petrochem','city-center',351,370,'site','Corpo Plaza','Implantation corporatiste de Petrochem à Night City. Emplacement exact à vérifier sur le plan de référence.','Petrochem'),
 site('corp-petrochem-industry','Installations Petrochem','santo-domingo',546,568,'site','Rancho Coronado / périphérie','Repère industriel provisoire pour la campagne. Le rattachement de ce point précis à Petrochem n’a pas été vérifié.','Petrochem')]},

@@ -124,3 +124,9 @@ Validation Chromium : disposition du panneau à droite, suppression des anciens 
 À la demande du MJ, la surbrillance Arasaka couvre désormais tout City Center, le sud de Watson, le secteur du domaine Arasaka à North Oak et Santo Domingo (interprétation de « porto domingo »). Arasaka Waterfront et Northside restent inclus. Les contours complets de City Center et Santo Domingo reprennent ceux de la carte de référence ; les deux autres secteurs sont des polygones approximatifs. Ce périmètre est un choix de campagne, pas une affirmation supplémentaire de contrôle canonique.
 
 Validation : compilation et contrôle dans Chromium des six zones et de leur interrupteur d’affichage.
+
+### Influence Biotechnica — serres du sud-ouest
+
+Le périmètre agricole de Biotechnica est recalé sur les grands champs de serres en bas à gauche de la carte fournie. Un second polygone couvre leur arrière-pays dans les Badlands du sud. Corpo Plaza reste inclus. Le repère « Biotechnica Flats — serres » se trouve désormais au cœur du secteur agricole sud-ouest. Périmètres d’influence de campagne et position approximative.
+
+Validation : compilation, trois zones Biotechnica dans Chromium, position du repère, ouverture de sa fiche et interrupteur d’influence.
