@@ -38,3 +38,17 @@ L’écran d’entrée propose MJ, J1 et J2, sans mot de passe. J1 et J2 dispose
 Ces profils sont une sélection de terminal, pas une authentification ni un contrôle d’accès. Aucun partage entre appareils n’est encore fourni.
 
 Validation profils : ouverture MJ/J1/J2, sauvegarde et rechargement de session, déconnexion, isolation des messages J1/J2, aperçu MJ, migration de l’ancienne sauvegarde et affichage mobile.
+
+## Glossaire des corporations
+
+21 fiches initiales dans `corporations.js` et interface dans `glossary.js`. Trois niveaux cumulatifs : notoriété publique, connaissance approfondie, analyse stratégique. Le niveau initial est 1 pour chaque corporation et joueur. MJ → « Glossaire / Connaissances » permet de modifier indépendamment J1 et J2. Les joueurs disposent de l’onglet « Glossaire », d’une recherche et d’un filtre par secteur.
+
+Les réglages sont enregistrés dans `fia-corporation-knowledge-v1`. Les onglets du même navigateur sont actualisés lors des changements. Pour un autre appareil, le MJ exporte le JSON du joueur ; celui-ci l’importe dans son glossaire. L’import refuse les mauvais profils, versions et niveaux et ne modifie pas les fiches de personnage. Ce transfert est manuel et les fichiers restent modifiables : aucun contrôle d’accès réel n’est fourni par cet hébergement statique.
+
+### État des sources
+
+Les pages `https://cyberpunk.fandom.com/wiki/Corporations` et `https://cyberpunk.fandom.com/wiki/Arasaka` ont été bloquées par le proxy (CONNECT 403). Les liens individuels des fiches sont des références prévues, non des pages effectivement consultées. Le contenu est donc provisoire et signalé comme tel dans l’interface. Il faut autoriser `cyberpunk.fandom.com` dans le réseau de l’environnement, consulter les pages et vérifier les résumés avant de considérer ce travail documentaire achevé. Le niveau 3 propose des analyses éditoriales, pas des secrets canoniques. La sélection initiale n’est pas exhaustive.
+
+### Validation glossaire
+
+Compilation et parcours Chromium : 21 corporations, recherche et recherche vide, niveaux 1/2/3 cumulatifs, attributions J1/J2 indépendantes, persistance après rechargement, export/import, rejet d’un fichier pour le mauvais joueur, affichage MJ/joueur à 390/768/1024 pixels sans débordement et aucune erreur JavaScript.
