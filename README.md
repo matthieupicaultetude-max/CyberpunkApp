@@ -78,3 +78,15 @@ Ce plan est schématique et non à l’échelle. Routes, limites et positions so
 Les tentatives de consultation de `https://night-city-geoguessr.site/` et `https://cyberpunk.fandom.com/wiki/Night_City` ont échoué (proxy CONNECT 403). Aucune image ni donnée n’a été extraite de ces sites. Les liens sont proposés comme références à consulter ; il faut autoriser `night-city-geoguessr.site` et `cyberpunk.fandom.com` dans les paramètres réseau pour vérifier la géographie et les informations. Les sites peuvent nécessiter d’autres domaines de ressources après ce premier accès.
 
 Validation : compilation, accès joueurs/MJ, sept secteurs et 17 lieux, sélection et descriptions, zoom/recentrage/déplacement, clavier, recherche sans résultat, filtres croisés et affichage à 390/768/1024 pixels sans débordement. Aucune erreur JavaScript pendant le parcours. Le pincement est implémenté mais reste à vérifier sur téléphone réel.
+
+## Carte de référence fournie — recalage et import local
+
+Le plan utilise désormais le repère 956 × 980 de l’image fournie par l’utilisateur. Les contours sont retracés visuellement et les repères repositionnés approximativement. Les routes fictives du précédent schéma sont supprimées. Les emplacements précis des lieux restent à valider.
+
+L’image de la conversation n’est pas accessible comme fichier dans l’exécuteur : aucun fond satellite fourni n’est donc présent dans le dépôt. MJ → Carte → « Importer la carte de référence » permet de sélectionner cette image complète en PNG/JPG/WebP, jusqu’à 20 Mo, sans recadrage. Le ratio doit correspondre à 956 × 980 (tolérance de 2 %).
+
+Le Blob est conservé dans IndexedDB (`fia-map-assets`), commun aux profils du même navigateur et de la même origine. Il suit exactement les transformations des zones et repères. L’import est réservé à l’interface MJ ; un bouton permet de retirer le fond. Les joueurs voient le fond importé lorsqu’ils ouvrent leur carte. Sans fond, seuls les contours recalés sont affichés.
+
+Le fichier n’est pas envoyé à GitHub et ne se synchronise pas entre appareils. Pour un fond par défaut partagé par tous, il faut récupérer le fichier original dans le dépôt puis le publier comme ressource statique. Cette partie reste en attente de l’accès au fichier.
+
+Validation supplémentaire avec une image de test générée de 956 × 980 (pas l’image utilisateur) : import, validation du type, conservation du fond existant en cas d’image invalide, persistance IndexedDB après rechargement, affichage joueur, contrôles réservés au MJ, suppression du fond et rendu mobile. Les contrôles de carte précédents passent également.
