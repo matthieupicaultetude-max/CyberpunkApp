@@ -30,3 +30,11 @@ Compilation Vite et parcours automatisé Chromium : accueil, modification et per
 Le build cible `/CyberpunkApp/`. La branche `gh-pages` contient les fichiers statiques compilés. Dans GitHub → Settings → Pages, choisir « Deploy from a branch », branche `gh-pages`, dossier `/ (root)`.
 
 Pour republier après une modification : exécuter `npm ci` puis `npm run build`, et publier le contenu de `dist` à la racine de `gh-pages` (avec un fichier `.nojekyll`). Ne pas pousser les dépendances `node_modules`.
+
+## Profils locaux
+
+L’écran d’entrée propose MJ, J1 et J2, sans mot de passe. J1 et J2 disposent de données distinctes dans le localStorage (`fia-profile-j1` et `fia-profile-j2`). L’ancienne sauvegarde `agent-demo` est récupérée dans J1 à sa première ouverture, sans supprimer la source. La sélection est conservée dans le sessionStorage de l’onglet jusqu’à déconnexion. Le profil MJ affiche les résumés des deux fiches sur le même navigateur et permet leur actualisation.
+
+Ces profils sont une sélection de terminal, pas une authentification ni un contrôle d’accès. Aucun partage entre appareils n’est encore fourni.
+
+Validation profils : ouverture MJ/J1/J2, sauvegarde et rechargement de session, déconnexion, isolation des messages J1/J2, aperçu MJ, migration de l’ancienne sauvegarde et affichage mobile.
