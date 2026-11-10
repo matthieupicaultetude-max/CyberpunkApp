@@ -90,3 +90,13 @@ Le Blob est conservé dans IndexedDB (`fia-map-assets`), commun aux profils du m
 Le fichier n’est pas envoyé à GitHub et ne se synchronise pas entre appareils. Pour un fond par défaut partagé par tous, il faut récupérer le fichier original dans le dépôt puis le publier comme ressource statique. Cette partie reste en attente de l’accès au fichier.
 
 Validation supplémentaire avec une image de test générée de 956 × 980 (pas l’image utilisateur) : import, validation du type, conservation du fond existant en cas d’image invalide, persistance IndexedDB après rechargement, affichage joueur, contrôles réservés au MJ, suppression du fond et rendu mobile. Les contrôles de carte précédents passent également.
+
+## Carte — section Corporations
+
+Une section dépliable permet de choisir l’une des dix corporations. La sélection isole ses repères et superpose des polygones d’influence ; trois cases commandent séparément QG local (losange), sites principaux (cercles) et influence (zones colorées en pointillé). Les repères ouvrent les fiches existantes et restent compatibles avec recherche, district, type, zoom et fond importé. Choisir une corporation efface les autres filtres pour éviter un résultat vide trompeur. « Effacer la sélection » revient aux lieux généraux.
+
+Les données sont dans `corporation-map-data.js`. Le siège mondial est décrit séparément du QG local : on ne positionne pas Tokyo ou Washington à Night City. Plusieurs corporations n’ont pas de site local suffisamment renseigné ; un état explicite le signale. Les rattachements et positions existants restent provisoires, les références étant toujours inaccessibles. L’implantation industrielle Petrochem est explicitement une proposition de campagne non vérifiée.
+
+Les zones d’influence sont des propositions pour la campagne, pas des frontières canoniques, des possessions ou un contrôle exclusif. Elles sont dessinées sur les sous-quartiers plutôt que sur tous les districts. Trauma Team n’est pas représentée comme possédant la ville sous prétexte de couverture médicale.
+
+Validation : dix choix de corporation, sélection Arasaka (QG local et trois sites), activation indépendante des couches, fiches, filtres croisés, distinction des sièges hors carte, états sans site renseigné, chargement des visuels, retour aux lieux généraux, profils MJ/joueur et affichage mobile ; régression de l’import et de la conservation du fond de carte.
