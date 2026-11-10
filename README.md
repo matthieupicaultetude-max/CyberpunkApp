@@ -39,25 +39,28 @@ Ces profils sont une sélection de terminal, pas une authentification ni un cont
 
 Validation profils : ouverture MJ/J1/J2, sauvegarde et rechargement de session, déconnexion, isolation des messages J1/J2, aperçu MJ, migration de l’ancienne sauvegarde et affichage mobile.
 
-## Glossaire des corporations
+## Glossaire des corporations — éditeur MJ
 
-10 fiches majeures dans `corporations.js` et interface dans `glossary.js`. Trois niveaux cumulatifs : notoriété publique, connaissance approfondie, renseignements sensibles. Le niveau initial est 1 pour chaque corporation et joueur. MJ → « Glossaire / Connaissances » permet de modifier indépendamment J1 et J2. Les joueurs disposent de l’onglet « Glossaire », d’une recherche et d’un filtre par secteur.
+Dix corporations : Arasaka, Militech, Kang Tao, Biotechnica, Petrochem, SovOil, Trauma Team, Night Corp, Zetatech et Kiroshi. Les textes initiaux sont dans `corporations.js`. Le stockage et la migration sont dans `glossary-model.js`, l’interface dans `glossary.js`.
 
-Les réglages sont enregistrés dans `fia-corporation-knowledge-v1`. Les onglets du même navigateur sont actualisés lors des changements. Pour un autre appareil, le MJ exporte le JSON du joueur ; celui-ci l’importe dans son glossaire. L’import refuse les mauvais profils, versions et niveaux et ne modifie pas les fiches de personnage. Ce transfert est manuel et les fichiers restent modifiables : aucun contrôle d’accès réel n’est fourni par cet hébergement statique.
+Depuis MJ → Glossaire / Connaissances :
 
-### État des sources
+- Modifier le nom, le secteur, l’origine et la source HTTPS de la corporation.
+- Ajouter des blocs avec titre et texte ; ils sont masqués par défaut.
+- Éditer chaque bloc et cocher J1 et/ou J2, puis enregistrer.
+- Supprimer un bloc après confirmation.
+- Exporter le dossier de chaque joueur : seuls ses blocs visibles sont inclus.
 
-Les pages `https://cyberpunk.fandom.com/wiki/Corporations` et `https://cyberpunk.fandom.com/wiki/Arasaka` ont été bloquées par le proxy (CONNECT 403). Les liens individuels des fiches sont des références prévues, non des pages effectivement consultées. Le contenu est donc provisoire et signalé comme tel dans l’interface. Il faut autoriser `cyberpunk.fandom.com` dans le réseau de l’environnement, consulter les pages et vérifier les résumés avant de considérer ce travail documentaire achevé. Le niveau 3 propose des analyses éditoriales, pas des secrets canoniques. La sélection initiale n’est pas exhaustive.
+Les trois niveaux ont été supprimés de l’interface. Lors de la première utilisation, les six rubriques initiales de chaque corporation deviennent six blocs indépendants. Les anciens réglages sont convertis en visibilité par bloc, sans supprimer la sauvegarde source. Les modifications sont conservées dans `fia-glossary-editor-v1`.
 
-### Validation glossaire
+Les joueurs n’affichent et ne recherchent que leurs blocs visibles. Ils peuvent importer le dossier JSON du MJ ; le fichier est validé et enregistré dans `fia-glossary-received-j1` ou `fia-glossary-received-j2`. Un enregistrement MJ dans le même navigateur remplace ces copies reçues par les données locales à jour. Les nouveaux exports sont au format `fia-glossary-blocks`, version 1 ; les anciens fichiers de niveaux doivent être réexportés depuis le MJ.
 
-Compilation et parcours Chromium : 10 corporations, recherche et recherche vide, niveaux 1/2/3 cumulatifs, attributions J1/J2 indépendantes, persistance après rechargement, export/import, rejet d’un fichier pour le mauvais joueur, affichage MJ/joueur à 390/768/1024 pixels sans débordement et aucune erreur JavaScript.
+### Limites et sources
 
+Le fonctionnement reste local au navigateur. Pour un autre appareil, envoyer le fichier exporté au joueur et le réimporter après chaque changement. Il n’y a pas de synchronisation automatique ni d’authentification ; le filtrage d’affichage ne constitue pas un contrôle d’accès sécurisé.
 
-### Fiches détaillées et visuels
+Le wiki `cyberpunk.fandom.com` et son serveur d’images `static.wikia.nocookie.net` sont bloqués par le proxy (CONNECT 403). Les textes initiaux restent provisoires et les SVG de `public/corporations/` sont des signatures graphiques non officielles. Autoriser ces domaines est nécessaire pour vérifier les textes et récupérer les vrais logos. Les fiches comportent les liens des sources prévues ; le MJ peut les modifier. Les pages externes peuvent contenir des spoilers.
 
-La sélection conserve Arasaka, Militech, Kang Tao, Biotechnica, Petrochem, SovOil, Trauma Team, Night Corp, Zetatech et Kiroshi. Chaque corporation possède six rubriques réparties sur trois niveaux : produits et services, exemples concrets, histoire, figures liées, puis renseignements sensibles et mise en perspective. Les personnes liées sont distinguées des employés ou dirigeants. Les spoilers sont signalés dans les rubriques du niveau 3.
+### Vérifications
 
-Les dix SVG de `public/corporations/` sont des signatures graphiques provisoires créées pour l’interface, pas des logos officiels. Le wiki et `static.wikia.nocookie.net` renvoient toujours un refus du proxy (CONNECT 403). Autoriser ces domaines dans les paramètres réseau est nécessaire pour vérifier les textes et récupérer les vrais logos avec leurs références. Les marquages dans l’interface indiquent cette limite.
-
-Les identifiants et niveaux enregistrés des dix corporations sont conservés. L’import accepte aussi les anciens exports à 21 corporations, en ne reprenant que les dix corporations retenues. Vérifications supplémentaires : chargement des dix SVG, présence de 60 rubriques, lisibilité des sections et import d’un ancien export à 21 entrées.
+Compilation et parcours Chromium : migration des anciens réglages, ajout/modification/suppression des blocs, visibilité indépendante J1/J2, sauvegarde après rechargement, recherche excluant les blocs masqués, export excluant leur contenu, import du dossier joueur, édition de la présentation et affichage mobile MJ/joueur sans débordement, aucune erreur JavaScript.

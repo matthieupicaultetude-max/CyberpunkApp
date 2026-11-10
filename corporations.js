@@ -1,6 +1,5 @@
 // French editorial summaries pending verification against the linked wiki pages.
 // Visual signatures are original typographic placeholders, not official logos.
-export const knowledgeLevels=['Notoriété publique','Connaissance approfondie','Renseignements sensibles'];
 const tier=(...sections)=>sections.map(([title,text])=>({title,text}));
 export const corporations=[
 {id:'arasaka',name:'Arasaka',sector:'Sécurité · Armement · Finance',page:'Arasaka',origin:'Japon · Tokyo',color:'#d64040',mark:'ARASAKA',tiers:[
@@ -43,4 +42,4 @@ tier(['Enjeu stratégique','Un même fabricant peut fournir des appareils à des
 tier(['Ce qu’elle vend','Implants oculaires et systèmes de cyberoptique : remplacement de la vision, affichage d’informations et fonctions de scanner selon le modèle. Les optiques s’intègrent aux interfaces cybernétiques du porteur.'],['Produit visible en 2077','Les optiques Kiroshi font partie des améliorations installées au début de l’aventure de V. Elles donnent une interface de lecture de l’environnement ; les capacités précises varient selon le matériel et les règles de jeu.']),
 tier(['Histoire et réputation','Kiroshi est un spécialiste japonais de la cyberoptique dont les implants sont devenus une référence largement diffusée. Son influence se situe dans l’équipement personnel et l’écosystème des charcudocs plutôt que dans les armées privées.'],['Personne liée — Viktor Vektor','Viktor Vektor installe des optiques Kiroshi à V au début de Cyberpunk 2077. C’est un charcudoc indépendant utilisant les produits de la marque, pas un fondateur ni un cadre de Kiroshi.']),
 tier(['Distinguer modèle et marque','Scanner, grossissement et intégration aux autres implants sont des fonctions à examiner au niveau du modèle. La simple présence d’optiques Kiroshi ne permet pas de déduire toutes les capacités ou l’affiliation du porteur.'],['Adaptation aux règles maison','Cette fiche décrit l’univers, pas des bonus chiffrés. Le MJ peut associer les modèles à ses propres règles de perception ou de repérage, sans confondre ces choix de campagne avec les statistiques du jeu vidéo.'])]}
-].map(c=>({...c,source:'https://cyberpunk.fandom.com/wiki/'+c.page,logo:'corporations/'+c.id+'.svg'}));
+].map(({tiers,...c})=>({...c,source:'https://cyberpunk.fandom.com/wiki/'+c.page,logo:'corporations/'+c.id+'.svg',blocks:tiers.flat().map((b,i)=>({...b,id:c.id+'-info-'+i}))}));
