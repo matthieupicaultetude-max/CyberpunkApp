@@ -136,3 +136,13 @@ Validation : compilation, trois zones Biotechnica dans Chromium, position du rep
 Arasaka couvre désormais l’ensemble de Westbrook, ce qui englobe aussi le domaine Arasaka : l’ancien petit polygone du domaine est remplacé pour éviter une double opacité. SovOil conserve sa zone énergétique et ajoute la bande au nord de Watson. Trauma Team couvre les cinq districts urbains hors Pacifica : Watson, Westbrook, City Center, Heywood et Santo Domingo. Pacifica (donc Dogtown) et les Badlands sont exclus. Il s’agit d’une couverture médicale définie pour la campagne, pas d’une possession territoriale.
 
 Validation : compilation, contrôle des contours et exclusions, sélection des trois couches dans Chromium et activation/désactivation de la surbrillance.
+
+## Carte — Gangs et clans
+
+La section « Gangs » apparaît sous « Corporations » dans la colonne droite. Elle contient les huit groupes majeurs de 2077 (Maelstrom, Tyger Claws, Valentinos, 6th Street, Voodoo Boys, Animals, Mox et Scavengers), puis le Barghest et les groupes nomades Aldecaldos/Wraiths, dont la nature est explicitement distinguée.
+
+`gang-map-data.js` décrit onze groupes et 21 lieux affiliés. Chaque branche dépliable sélectionne une couche, affiche ses repaires/lieux et ses polygones d’influence. Le choix d’un lieu ouvre la fenêtre existante. Les options Repaire/Camp, Lieux et Influence sont indépendantes et distinctes des réglages des corporations. Sélectionner une corporation ou un gang désactive l’autre couche ; les périmètres de campagne des corporations sont conservés.
+
+Les sources wiki n’ont pas pu être consultées : nouvelle requête sur `https://cyberpunk.fandom.com/wiki/Gangs` refusée par le proxy (CONNECT 403). Les données viennent donc de connaissances générales, avec références prévues, et restent à vérifier. Les positions et contours sont approximatifs. Les zones des Scavengers représentent une présence diffuse, celles des Animals des contrats, les camps nomades sont mobiles. Les établissements associés ne sont pas automatiquement des propriétés du groupe ; les changements possibles liés aux missions sont signalés.
+
+Validation Chromium : onze groupes, 21 lieux, sélection de chaque couche et ouverture de sa fiche, interrupteurs repaires/lieux/influence, recherche et filtre de catégorie, bascule corporations/gangs, retour aux lieux généraux, profils MJ/joueur et largeurs 390/768/1024 sans débordement. Aucune erreur JavaScript. Compilation réussie.
