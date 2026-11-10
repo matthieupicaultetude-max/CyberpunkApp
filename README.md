@@ -146,3 +146,15 @@ La section « Gangs » apparaît sous « Corporations » dans la colonne droite.
 Les sources wiki n’ont pas pu être consultées : nouvelle requête sur `https://cyberpunk.fandom.com/wiki/Gangs` refusée par le proxy (CONNECT 403). Les données viennent donc de connaissances générales, avec références prévues, et restent à vérifier. Les positions et contours sont approximatifs. Les zones des Scavengers représentent une présence diffuse, celles des Animals des contrats, les camps nomades sont mobiles. Les établissements associés ne sont pas automatiquement des propriétés du groupe ; les changements possibles liés aux missions sont signalés.
 
 Validation Chromium : onze groupes, 21 lieux, sélection de chaque couche et ouverture de sa fiche, interrupteurs repaires/lieux/influence, recherche et filtre de catégorie, bascule corporations/gangs, retour aux lieux généraux, profils MJ/joueur et largeurs 390/768/1024 sans débordement. Aucune erreur JavaScript. Compilation réussie.
+
+## Carte — Merc, bars et fixeurs
+
+La section « Merc » est placée sous Gangs. Elle propose une sélection de huit bars/points de rendez-vous : Afterlife, Lizzie’s Bar, El Coyote Cojo, Electric Orgasm, Heavy Hearts, Riot, Dicky Twister et Sunset Motel. Huit fixeurs ont leur branche : Rogue Amendiares, Regina Jones, Wakako Okada, Padre, El Capitán, Dino Dinovic, Dakota Smith et Mr. Hands.
+
+`merc-map-data.js` associe les lieux et les secteurs de contrats. Les points de contact sont distingués des autres lieux par un losange et une option spécifique. Les options Points de contact, Bars/Rendez-vous et Réseau d’influence sont indépendantes de celles des corporations et gangs. La sélection d’une couche désactive les deux autres familles. Les mêmes lieux peuvent apparaître dans la sélection générale et chez leur fixer avec des identifiants propres à chaque branche, pour garantir le retour du focus après fermeture de la fiche.
+
+L’influence d’un fixer représente ses contacts et sa zone habituelle de contrats, pas une possession territoriale. Rogue possède une portée transversale aux districts urbains ; les autres fixeurs sont associés à leur secteur habituel. Les points de Padre et d’El Capitán sont explicitement indicatifs. Le Coyote Cojo et le Sunset Motel ne sont pas présentés comme des bureaux officiels de leurs contacts. Heavy Hearts est lié à Phantom Liberty.
+
+Les descriptions et coordonnées restent provisoires, avec des liens wiki de référence prévus, non vérifiés depuis cet environnement. La sélection n’est pas un inventaire exhaustif des lieux de 2077.
+
+Validation Chromium : neuf branches (bars + huit fixeurs), repères et réseaux de chaque branche, fenêtres et retour du focus, options de visibilité, recherche/catégorie, retour aux lieux généraux, régression corporations/gangs, MJ/joueur et largeurs 390/768/1024 sans débordement. Compilation réussie, aucune erreur JavaScript.
