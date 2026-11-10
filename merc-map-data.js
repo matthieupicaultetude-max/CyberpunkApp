@@ -1,7 +1,8 @@
 // Approximate positions on the user's map. Wiki references remain unverified.
 import {districts} from './night-city-data.js';
 const zones=(...ids)=>districts.filter(d=>ids.includes(d.id)).map(d=>({name:d.name,points:d.shape}));
-const site=(id,name,district,x,y,area,text,page,kind='site')=>({id:'merc-'+id,name,district,x,y,area,text,kind,category:'Merc',source:'https://cyberpunk.fandom.com/wiki/'+page});
+const photoPages=new Set(['Afterlife','Lizzie%27s_Bar','El_Coyote_Cojo','Electric_Orgasm','Heavy_Hearts','Riot','Dicky_Twister','Sunset_Motel']);
+const site=(id,name,district,x,y,area,text,page,kind='site')=>({id:'merc-'+id,name,district,x,y,area,text,kind,category:'Merc',imageArticle:photoPages.has(page)?decodeURIComponent(page):null,source:'https://cyberpunk.fandom.com/wiki/'+page});
 const afterlife=site('afterlife','Afterlife','watson',376,304,'Little China','Club de référence pour les mercenaires de Night City, tenu par Rogue Amendiares. On y retrouve notamment Claire au bar. Un lieu de contrats et de contacts, sans garantie que tous les clients soient des alliés.','Afterlife');
 const lizzie=site('lizzies','Lizzie’s Bar','watson',391,243,'Kabuki','Bar et établissement de braindance associé aux Mox. Judy Alvarez y travaille. Un lieu de rencontres et d’informations, pas le bureau d’un fixer territorial.','Lizzie%27s_Bar');
 const coyote=site('coyote','El Coyote Cojo','heywood',349,471,'The Glen','Bar de Mama Welles, lié à Jackie et à la communauté locale. Un point de sociabilité pour les mercs de Heywood, sans en faire le bureau permanent de Padre.','El_Coyote_Cojo');

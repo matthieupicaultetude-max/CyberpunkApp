@@ -174,3 +174,9 @@ Validation effectuée : compilation et tests Chromium avec API/CDN simulés, cha
 Le même composant photo équipe désormais les pop-ups des 21 lieux de gangs/clans. Dix-huit entrées ont une page de lieu candidate pour la récupération PageImages (All Foods, Totentanz, Clouds, Lizzie’s Bar, Black Sapphire, etc.). Les trois entrées uniquement rattachées à un personnage ou à un événement ne tentent pas d’afficher le portrait du personnage ou une image de quête comme s’il s’agissait du bâtiment : elles indiquent « Photo non référencée ».
 
 Les mêmes limites réseau demeurent : aucune image réelle n’a été récupérée ni vérifiée. Les pages candidates, notamment les camps mobiles, restent à contrôler. Tests Chromium avec API/CDN simulés : photos et crédits Maelstrom/Mox/Barghest, repli pour lieu sans page adaptée, fenêtre mobile et fermeture. Compilation réussie.
+
+### Photos des lieux Merc
+
+Les fenêtres Merc utilisent désormais le même affichage photo que les lieux corporatistes et de gangs. Les huit lieux de rencontre possèdent une référence de page candidate ; cette référence est conservée quand un bar figure aussi dans la branche d’un fixer (Afterlife/Rogue, Electric Orgasm/Dino, Heavy Hearts/Mr. Hands, etc.). Les points de contact sans page de lieu adaptée affichent « Photo non référencée » plutôt qu’un portrait de fixer.
+
+La récupération réelle reste dépendante de l’accès au wiki et du CDN, toujours non vérifiés depuis cet environnement. Tests simulés Chromium : Afterlife, Rogue, Heavy Hearts et Electric Orgasm avec attribution, repli du bureau de Regina sans portrait de substitution, fermeture et fenêtre mobile. Compilation réussie.
