@@ -118,3 +118,9 @@ La section Corporations est placée dans la colonne droite de la carte sur ordin
 Un clic sur un repère ouvre une fenêtre modale native avec le nom, le quartier, la corporation si applicable, la description et le lien de référence. Le choix d’un lieu dans l’arbre centre la carte et ouvre la même fenêtre. Fermeture par croix, Échap ou clic sur le fond extérieur ; le focus revient au repère ou à l’entrée de l’arbre. Les zones cliquables de deux repères proches ont été réduites pour éviter une interception au centre du cercle voisin.
 
 Validation Chromium : disposition du panneau à droite, suppression des anciens panneaux, clic réel sur un cercle, ouverture depuis l’arbre, fermeture par les trois méthodes, retour du focus, ouverture clavier, fenêtre et page sans débordement à 390 pixels, accès MJ/joueur, aucune erreur JavaScript. Compilation réussie.
+
+### Influence Arasaka — choix de campagne
+
+À la demande du MJ, la surbrillance Arasaka couvre désormais tout City Center, le sud de Watson, le secteur du domaine Arasaka à North Oak et Santo Domingo (interprétation de « porto domingo »). Arasaka Waterfront et Northside restent inclus. Les contours complets de City Center et Santo Domingo reprennent ceux de la carte de référence ; les deux autres secteurs sont des polygones approximatifs. Ce périmètre est un choix de campagne, pas une affirmation supplémentaire de contrôle canonique.
+
+Validation : compilation et contrôle dans Chromium des six zones et de leur interrupteur d’affichage.

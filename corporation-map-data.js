@@ -1,8 +1,13 @@
 // Provisional corpus: placements are approximate and source pages remain inaccessible.
 // Influence polygons are campaign proposals, never territorial ownership claims.
 import {corporations} from './corporations.js';
+import {districts} from './night-city-data.js';
 const area=(name,points)=>({name,points});
 const zones={
+cityCenter:area('Centre-ville (City Center)',districts.find(d=>d.id==='city-center').shape),
+southWatson:area('Sud de Watson','296,263 355,234 393,234 394,316 415,313 408,329 316,329'),
+arasakaEstate:area('Domaine Arasaka / North Oak','558,229 604,226 619,244 612,272 597,285 574,279 556,258'),
+santoDomingo:area('Santo Domingo',districts.find(d=>d.id==='santo-domingo').shape),
 plaza:area('Corpo Plaza','349,351 404,347 430,369 417,400 402,402 396,426 371,437 354,423 346,395'),
 downtown:area('Downtown','261,344 315,331 349,351 346,395 354,408 265,405 252,377'),
 waterfront:area('Arasaka Waterfront','222,153 282,114 303,141 300,165 322,166 349,222 355,234 296,263 212,239'),
@@ -15,7 +20,7 @@ east:area('Corridors énergétiques des Badlands','640,415 820,385 907,454 884,5
 petro:area('Périphérie industrielle de Rancho Coronado','520,495 598,480 602,540 585,578 568,605 483,614 455,592 484,550')};
 const site=(id,name,district,x,y,kind,area,text,page)=>({id,name,district,x,y,kind,area,text,category:'Corporation',source:'https://cyberpunk.fandom.com/wiki/'+page,provisional:true});
 const entries={
-arasaka:{hq:'QG mondial : Tokyo, Japon. Direction locale : tour Arasaka, Corpo Plaza.',zones:[zones.plaza,zones.waterfront,zones.northside],sites:[
+arasaka:{hq:'QG mondial : Tokyo, Japon. Direction locale : tour Arasaka, Corpo Plaza.',zones:[zones.cityCenter,zones.waterfront,zones.northside,zones.southWatson,zones.arasakaEstate,zones.santoDomingo],sites:[
 site('corp-arasaka-hq','Tour Arasaka','city-center',373,378,'hq','Corpo Plaza','Direction locale d’Arasaka. Ce repère désigne le centre des activités à Night City, pas le siège mondial situé à Tokyo.','Arasaka_Tower'),
 site('corp-arasaka-waterfront','Arasaka Waterfront','watson',269,216,'site','Arasaka Waterfront','Secteur portuaire et industriel associé à Arasaka. Le repère représente un ensemble d’installations, pas une entrée précise.','Arasaka_Waterfront'),
 site('corp-arasaka-park','Parc industriel Arasaka','santo-domingo',466,487,'site','Arroyo','Complexe industriel d’Arasaka impliqué dans les événements de 2077. Emplacement dessiné approximativement.','Arasaka_Industrial_Park'),
