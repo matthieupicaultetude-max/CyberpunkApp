@@ -180,3 +180,17 @@ Les mêmes limites réseau demeurent : aucune image réelle n’a été récupé
 Les fenêtres Merc utilisent désormais le même affichage photo que les lieux corporatistes et de gangs. Les huit lieux de rencontre possèdent une référence de page candidate ; cette référence est conservée quand un bar figure aussi dans la branche d’un fixer (Afterlife/Rogue, Electric Orgasm/Dino, Heavy Hearts/Mr. Hands, etc.). Les points de contact sans page de lieu adaptée affichent « Photo non référencée » plutôt qu’un portrait de fixer.
 
 La récupération réelle reste dépendante de l’accès au wiki et du CDN, toujours non vérifiés depuis cet environnement. Tests simulés Chromium : Afterlife, Rogue, Heavy Hearts et Electric Orgasm avec attribution, repli du bureau de Regina sans portrait de substitution, fermeture et fenêtre mobile. Compilation réussie.
+
+## Interface joueur — trois onglets
+
+La navigation principale propose désormais Personnage (accueil), Relations et Carte. L’accueil affiche un cadre de personnage avec portrait, prénom, nom, surnom, classe, indicateurs PV/fonds et aperçu des trois premières relations. Le bouton « Modifier le dossier » ouvre l’édition de l’identité et l’import d’un portrait PNG/JPG/WebP de 1 Mo maximum ; le portrait reste sur le navigateur et peut être retiré.
+
+L’onglet Relations fournit un carnet éditable : nom, rôle, type de lien (Contact/Allié/Rival/Famille/Neutre), affiliation et notes. Ajout, modification et suppression sont conservés séparément pour J1/J2. Nyx est un contact de démonstration initial, modifiable ou supprimable.
+
+`player-ui.js` gère l’affichage et les formulaires. Les anciennes sauvegardes sont normalisées sans supprimer PV, argent, notes, caractéristiques, missions ou messages. L’ancien nom de personnage devient le surnom et le rôle devient la classe. Prénom et nom sont laissés vides plutôt qu’inventés. Les champs historiques nom/rôle restent synchronisés pour les fiches et l’aperçu MJ.
+
+Les outils précédents (fiche complète, glossaire, opérations et communications) sont accessibles depuis le menu secondaire « Outils de campagne » à l’accueil. Le troisième onglet conserve la carte interactive avec corporations, gangs, Merc et fenêtres de lieu. L’interface MJ conserve ses outils.
+
+Les portraits et relations restent locaux au navigateur, sans synchronisation entre appareils. Les erreurs de stockage sont signalées et la dernière identité conservée est restaurée en mémoire si l’écriture échoue.
+
+Validation Chromium : trois onglets, récupération d’une sauvegarde ancienne, édition identité et portrait avec rechargement, conservation des anciennes valeurs, carnet de relations complet et aperçu à l’accueil, isolation J1/J2, accès carte/glossaire/MJ, affichage mobile sans débordement et aucune erreur JavaScript. Compilation réussie.
