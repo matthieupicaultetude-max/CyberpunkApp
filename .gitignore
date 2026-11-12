@@ -1,2 +1,6 @@
 node_modules/
 dist/
+
+
+# Preserve legacy local server state outside version control.
+.plateau-data/

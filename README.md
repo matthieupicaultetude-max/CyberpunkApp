@@ -11,11 +11,11 @@ npm ci --cache /workspace/.npm-cache
 npm run dev
 ```
 
-Production : `npm run build`, puis héberger le dossier `dist` sur un hébergement statique HTTPS. `npm run preview` permet de vérifier la compilation localement.
+Production : `npm run build`, puis héberger le contenu de `dist` sur GitHub Pages ou un autre hébergement statique HTTPS. `npm run preview` vérifie le build localement. Aucun serveur applicatif n’est requis sur l’hébergement.
 
 ## Portée actuelle
 
-Données de démonstration enregistrées dans le localStorage du navigateur. Aucun compte, serveur, synchronisation ou véritable envoi de messages. Ne pas y stocker de données sensibles. Effacer les données du site réinitialise la démo.
+Personnages et données de démonstration enregistrés dans le localStorage du navigateur. Aucun compte ni synchronisation des dossiers ou véritable envoi de messages. Le plateau MJ affiche des lieux publiés avec le site ; les joueurs récupèrent les nouveautés au rechargement (voir la section Plateau MJ). Ne pas y stocker de données sensibles. Effacer les données du site réinitialise la démo.
 
 Le manifeste et le service worker préparent l’installation mobile sur navigateur compatible, via HTTPS. Le cache permet de réouvrir les ressources déjà consultées hors ligne. Installation mobile et fonctionnement hors ligne sur appareil réel restent à vérifier. Les polices Google sont facultatives et disposent de polices de repli.
 
@@ -27,9 +27,7 @@ Compilation Vite et parcours automatisé Chromium : accueil, modification et per
 
 ## GitHub Pages
 
-Le build cible `/CyberpunkApp/`. La branche `gh-pages` contient les fichiers statiques compilés. Dans GitHub → Settings → Pages, choisir « Deploy from a branch », branche `gh-pages`, dossier `/ (root)`.
-
-Pour republier après une modification : exécuter `npm ci` puis `npm run build`, et publier le contenu de `dist` à la racine de `gh-pages` (avec un fichier `.nojekyll`). Ne pas pousser les dépendances `node_modules`.
+Le build cible `/CyberpunkApp/`. Le workflow **Publier le site sur GitHub Pages** compile puis déploie `dist` à chaque push sur `main`. Choisir **GitHub Actions** comme source dans les paramètres Pages. Voir la section Plateau MJ pour le parcours complet de publication. Aucun déploiement ne se déclenche automatiquement à l’enregistrement d’un lieu.
 
 ## Profils locaux
 
@@ -224,3 +222,34 @@ Validation Chromium : cinq ajouts sans modifier Claire, absence de doublon à la
 Le lot est installé une seule fois à l’ouverture de MJ → PNJ (`fia-npc-pack-fixers-v1`). Le mécanisme commun `installNPCPack` conserve les PNJ existants et utilise aussi des alias pour éviter de doubler une fiche déjà nommée Padre ou El Capitan. Claire et les cinq contacts précédents sont conservés. Les modifications et suppressions sont respectées. Aucun joueur n’est affecté automatiquement : les boutons Ajouter / Actualiser J1/J2 sont disponibles.
 
 Validation Chromium : présence des huit fixeurs, préservation de Claire et d’une Wakako personnalisée, absence de doublon en bibliothèque et en relation, exclusion des accroches MJ, persistance des modifications/suppressions et affichage mobile sans débordement. Compilation réussie, aucune erreur JavaScript.
+
+## Plateau MJ — préparation locale et publication statique
+
+Le plateau fonctionne sur GitHub Pages, sans serveur applicatif, compte externe ni abonnement. Node et Vite servent uniquement au développement et à la compilation. Les fichiers compilés suffisent pour les joueurs.
+
+### Préparer depuis le navigateur MJ
+
+1. Ouvrir **MJ → Plateau / Lieux** et créer un lieu : nom, description partagée, carte, musique et vidéo. Les adresses doivent pointer vers des fichiers accessibles aux joueurs. Une page YouTube n’est pas une URL vidéo directe.
+2. Pour des médias personnels, les ajouter au projet dans `public/cartes/`, `public/musiques/` ou `public/videos/`, puis utiliser leur chemin, par exemple `/CyberpunkApp/cartes/afterlife.webp`. Ces fichiers devront être publiés avec le site. Une adresse de fichier sur votre ordinateur ne fonctionne pas chez les joueurs.
+3. Cocher **Inclure ce lieu dans le prochain export destiné aux joueurs**. Les lieux non cochés restent des brouillons locaux. Les notes MJ sont toujours exclues de l’export ; ne pas mettre d’informations privées dans les descriptions partagées ou les médias publiés.
+4. Choisir le lieu d’accueil, puis **Exporter le plateau**. Le fichier téléchargé s’appelle `plateau.json`. Ce téléchargement ne modifie pas le site en ligne.
+5. Remplacer le fichier du projet `public/plateau.json` par ce téléchargement, puis publier le site comme indiqué ci-dessous.
+
+Les brouillons et notes MJ restent dans le localStorage du navigateur (`fia-plateau-v1`). Les lieux de l’ancien prototype sont conservés mais ne sont pas inclus par défaut. **Reprendre le contenu publié** remplace le brouillon après confirmation, sans récupérer les notes privées qui n’ont jamais été publiées. Les anciens fichiers de sessions serveur ne sont plus utilisés. L’export public n’est pas une sauvegarde des notes privées.
+
+### Publier sur GitHub Pages à chaque modification du dépôt
+
+Le workflow `.github/workflows/pages.yml` est déclenché automatiquement à chaque push sur `main`, ou manuellement depuis GitHub Actions. Enregistrer un lieu dans le navigateur ou exporter son fichier reste local : il faut envoyer le fichier au dépôt pour déclencher la publication.
+
+1. Envoyer le code et le fichier `public/plateau.json` vers le dépôt GitHub. Pour remplacer le JSON depuis le site GitHub, ouvrir [le dossier public](https://github.com/matthieupicaultetude-max/CyberpunkApp/tree/main/public), puis **Add file → Upload files**. Téléverser `plateau.json` et enregistrer la modification. Ajouter aussi les médias personnels utilisés.
+2. Une seule fois : dans [Settings → Pages](https://github.com/matthieupicaultetude-max/CyberpunkApp/settings/pages), choisir **Source → GitHub Actions**. Cela remplace l’ancien mode de publication depuis la branche `gh-pages`.
+3. Chaque modification envoyée sur `main` déclenche la compilation et le déploiement. Suivre le résultat dans [Actions → Publier le site sur GitHub Pages](https://github.com/matthieupicaultetude-max/CyberpunkApp/actions/workflows/pages.yml). **Run workflow** permet aussi de relancer une publication manuellement. Attendre que le déploiement réussisse.
+4. Les joueurs ouvrent le lien habituel du site, vont dans **Plateau**, puis rechargent la page ou cliquent **Actualiser le contenu**. Ils voient uniquement la version publiée. Le premier lieu ou le lieu d’accueil s’affiche et chaque joueur peut choisir un autre lieu publié et lire ses médias.
+
+Il n’y a ni code de session, ni commandes de lecture à distance, ni diffusion en direct. Changer le lieu dans l’aperçu MJ ne change pas l’écran des joueurs. Tous les lieux inclus dans le fichier publié sont publics. Le service worker ne met pas `plateau.json` en cache : la mise à jour du plateau nécessite un accès réseau. Si une actualisation échoue, le dernier contenu chargé dans l’onglet reste affiché avec un message d’erreur.
+
+### Validation
+
+`npm test` vérifie le format public, le filtrage des lieux, l’exclusion des notes MJ et la validation des adresses. `npm run build` génère le site statique ; `npm run preview` permet de le tester au chemin `/CyberpunkApp/`.
+
+`node tests/plateau-smoke.mjs` vérifie le parcours avec deux contextes Chromium isolés et un fichier public simulé : préparation locale, export, rafraîchissement joueur, persistance, mobile et erreurs réseau. Le serveur de prévisualisation doit être démarré. Ce parcours nécessite Playwright et Chromium ; `PLAYWRIGHT_MODULE`, `CHROMIUM_PATH` et `TEST_BASE_URL` permettent de sélectionner les outils et le site à tester. Aucun serveur de sessions ni FFmpeg n’est nécessaire.
