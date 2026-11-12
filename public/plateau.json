@@ -1,6 +1,15 @@
 {
   "format": "fia-plateau",
   "version": 1,
-  "activeId": null,
-  "scenes": []
+  "activeId": "afterlife",
+  "scenes": [
+    {
+      "id": "afterlife",
+      "name": "Afterlife — une nuit à Night City",
+      "description": "Watson · Little China\n\nDerrière la porte, les basses avalent le bruit de la rue. Le néon vert découpe les silhouettes ; au comptoir, les verres portent des noms que personne n’a oubliés. Ici, les mercenaires viennent chercher un contrat, un contact ou une place dans la légende.\n\nEmmerick surveille les arrivées. Claire tient le bar. Plus loin, les alcôves accueillent les négociations et Nix travaille sur les problèmes de réseau. Installez-vous : qui cherchez-vous ce soir ?\n\nPlan schématique original pour la campagne, non officiel et non à l’échelle. Ambiance musicale originale : boucle de 32 secondes. Vidéo originale : enseigne animée muette de 12 secondes. Lancez les médias ci-dessous ; lecture et volume restent individuels.",
+      "map": "/CyberpunkApp/cartes/afterlife.svg",
+      "music": "/CyberpunkApp/musiques/afterlife-ambiance.mp3",
+      "video": "/CyberpunkApp/videos/afterlife-neon.mp4"
+    }
+  ]
 }
