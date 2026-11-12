@@ -6,10 +6,34 @@
     {
       "id": "afterlife",
       "name": "Afterlife — une nuit à Night City",
-      "description": "Watson · Little China\n\nDerrière la porte, les basses avalent le bruit de la rue. Le néon vert découpe les silhouettes ; au comptoir, les verres portent des noms que personne n’a oubliés. Ici, les mercenaires viennent chercher un contrat, un contact ou une place dans la légende.\n\nEmmerick surveille les arrivées. Claire tient le bar. Plus loin, les alcôves accueillent les négociations et Nix travaille sur les problèmes de réseau. Installez-vous : qui cherchez-vous ce soir ?\n\nPlan schématique original pour la campagne, non officiel et non à l’échelle. Ambiance musicale originale : boucle de 32 secondes. Vidéo originale : enseigne animée muette de 12 secondes. Lancez les médias ci-dessous ; lecture et volume restent individuels.",
+      "description": "Watson · Little China\n\nDerrière la porte, les basses avalent le bruit de la rue. Le néon vert découpe les silhouettes ; au comptoir, les verres portent des noms que personne n’a oubliés. Ici, les mercenaires viennent chercher un contrat, un contact ou une place dans la légende.\n\nEmmerick surveille les arrivées. Claire tient le bar. Plus loin, les alcôves accueillent les négociations et Nix travaille sur les problèmes de réseau. Installez-vous : qui cherchez-vous ce soir ?\n\nPlan schématique original pour la campagne, non officiel et non à l’échelle. Ambiance musicale originale : boucle de 32 secondes. Lancez les médias ci-dessous ; lecture et volume restent individuels.",
       "map": "/CyberpunkApp/cartes/afterlife.svg",
       "music": "/CyberpunkApp/musiques/afterlife-ambiance.mp3",
-      "video": "/CyberpunkApp/videos/afterlife-neon.mp4"
+      "video": ""
+    },
+    {
+      "id": "maelstrom-allfoods",
+      "name": "Maelstrom — All Foods",
+      "description": "Watson · Northside\n\nUne usine de nourriture suspecte, prise et contrôlée par le Maelstrom. Sous les tuyaux et les convoyeurs, les machines couvrent les conversations. Le gang utilise aussi le site comme entrepôt de cadavres humains destinés aux Scavengers.\n\nLe plan distingue la réception gardée, la chaîne alimentaire, les cuves, la maintenance, la chambre froide, le tri et l’expédition. Les accès de service et la cour de chargement organisent les allées et venues.\n\nAmbiance originale : grondement industriel, froid mécanique et impacts métalliques. Adaptation de votre campagne ; plan schématique non officiel et non à l’échelle.",
+      "map": "/CyberpunkApp/cartes/maelstrom-allfoods.svg",
+      "music": "/CyberpunkApp/musiques/maelstrom-allfoods-industrial.mp3",
+      "video": ""
+    },
+    {
+      "id": "maelstrom-totentanz",
+      "name": "Maelstrom — Totentanz",
+      "description": "Watson · Northside\n\nLe Totentanz est le club du Maelstrom. Une musique électronique hardcore, rapide et agressive, écrase les voix. Face à la fosse, une grande scène accueille les performances ; derrière elle, les coulisses permettent de circuler entre le matériel et les artistes.\n\nLe plan comporte la scène, les coulisses, la régie et les loges, la piste de danse, les bars, les zones de service et l’entrée contrôlée.\n\nAmbiance musicale originale : hardcore électronique à 180 BPM, grosse caisse saturée et basses nerveuses. Lancez la lecture et réglez le volume sur votre appareil. Adaptation de votre campagne ; plan schématique non officiel et non à l’échelle.",
+      "map": "/CyberpunkApp/cartes/maelstrom-totentanz.svg",
+      "music": "/CyberpunkApp/musiques/maelstrom-totentanz-hardcore.mp3",
+      "video": ""
+    },
+    {
+      "id": "maelstrom-docks",
+      "name": "Maelstrom — Docks clandestins",
+      "description": "Watson · Northside\n\nDe simples docks d’entrepôts clandestins : des quais, des pontons, des palettes et des marchandises qui transitent à l’écart des circuits officiels. Le Maelstrom y contrôle les accès et les mouvements de cargaison.\n\nLe plan sépare le bassin et les pontons, le poste de contrôle, l’aire de transit, la manutention, deux entrepôts et le local de quai.\n\nAmbiance originale : machines lointaines, souffle du bassin et résonances métalliques. Adaptation de votre campagne ; emplacement indicatif, plan non officiel et non à l’échelle.",
+      "map": "/CyberpunkApp/cartes/maelstrom-docks.svg",
+      "music": "/CyberpunkApp/musiques/maelstrom-docks-ambiance.mp3",
+      "video": ""
     }
   ]
 }
