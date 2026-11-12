@@ -17,7 +17,6 @@ const articles={
 'corp-kiroshi-building':'Kiroshi_Building',
 'gang-maelstrom-allfoods':'All_Foods_Factory',
 'gang-maelstrom-totentanz':'Totentanz',
-'gang-maelstrom-docks':'Ebunike',
 'gang-tyger-clouds':'Clouds',
 'gang-tyger-jigjig':'Jig-Jig_Street',
 'gang-tyger-hooh':'Ho-Oh',

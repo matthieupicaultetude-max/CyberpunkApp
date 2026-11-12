@@ -253,3 +253,9 @@ Il n’y a ni code de session, ni commandes de lecture à distance, ni diffusion
 `npm test` vérifie le format public, le filtrage des lieux, l’exclusion des notes MJ et la validation des adresses. `npm run build` génère le site statique ; `npm run preview` permet de le tester au chemin `/CyberpunkApp/`.
 
 `node tests/plateau-smoke.mjs` vérifie le parcours avec deux contextes Chromium isolés et un fichier public simulé : préparation locale, export, rafraîchissement joueur, persistance, mobile et erreurs réseau. Le serveur de prévisualisation doit être démarré. Ce parcours nécessite Playwright et Chromium ; `PLAYWRIGHT_MODULE`, `CHROMIUM_PATH` et `TEST_BASE_URL` permettent de sélectionner les outils et le site à tester. Aucun serveur de sessions ni FFmpeg n’est nécessaire.
+
+### Plateaux de campagne disponibles
+
+L’Afterlife et trois lieux Maelstrom sont inclus dans `public/plateau.json`. All Foods est, selon les indications du MJ, une usine de nourriture suspecte occupée par le gang et utilisée comme entrepôt de cadavres humains destinés aux Scavengers. Le Totentanz est un club avec grande scène, coulisses et ambiance hardcore électronique originale à 180 BPM. Les docks sont de simples quais d’entrepôts clandestins. Ces adaptations de campagne ne sont pas présentées comme des plans officiels ou des informations canoniques vérifiées. Les cartes SVG et les boucles audio de 32 secondes sont des créations originales.
+
+À la demande du MJ, ne plus générer de vidéos pour les plateaux : les vidéos seront fournies par l’utilisateur. La précédente vidéo générée de l’Afterlife a été retirée. Les champs vidéo restent disponibles pour accueillir les fichiers fournis ultérieurement.
